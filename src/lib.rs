@@ -1,11 +1,7 @@
 #![no_std]
-use gstd::{msg, debug, ActorId, prelude::*};
+use gstd::{msg, debug, prelude::*};
+use hello_world_jj_io::InputMessages;
 
-#[derive(Encode, Decode, TypeInfo)]
-pub enum InputMessages {
-    SendHelloTo(ActorId),
-    SendHelloReply,
-}
 static mut GREETING: Option<String> = None;
 
 #[no_mangle]
